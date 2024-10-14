@@ -924,6 +924,8 @@ struct phy_device *phy_find_by_mask(struct mii_dev *bus, uint phy_mask,
 		/* Wait 15ms to make sure the PHY has come out of hard reset */
 		mdelay(15);
 	}
+	/* Wait 1ms to make sure the PHY is up even if the bus was not reset */
+	mdelay(1);
 
 	return get_phy_device_by_mask(bus, phy_mask, interface);
 }

@@ -1,0 +1,15 @@
+/*
+ * Copyright (C) 2018 Microsoft Corporation
+ *
+ * SPDX-License-Identifier:     GPL-2.0+
+ */
+
+/dts-v1/;
+
+#include "imx6q.dtsi"
+
+&usdhc4 {
+	bus-width = <4>;
+	non-removable;
+	status = "okay";
+};

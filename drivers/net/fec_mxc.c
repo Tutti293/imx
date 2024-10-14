@@ -403,7 +403,13 @@ static void fec_rbd_clean(int last, struct fec_bd *prbd)
 
 static int fec_get_hwaddr(int dev_id, unsigned char *mac)
 {
-	imx_get_mac_from_fuse(dev_id, mac);
+	unsigned char mac_wrong_order[6];
+	int j=5;
+	imx_get_mac_from_fuse(0, mac_wrong_order);
+	for(int i=0; i<6; i++) {
+		mac[i] = mac_wrong_order[j];
+		j--;
+	}
 	return !is_valid_ethaddr(mac);
 }
 

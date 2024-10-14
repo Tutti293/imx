@@ -1,0 +1,7 @@
+setenv bootargs baseboard=iPAN7 console=ttymxc1,115200 video=mxcfb0:dev=lcd,IPAN7-EDT-WVGA,bpp=32,if=RGB565 root=/dev/mmcblk0p1 rw
+ext4load mmc 0:1 ${fdt_addr} ${fdt_file}
+ext4load mmc 0:1 ${loadaddr} ${image}
+echo "Booting the Debian..." 
+bootz ${loadaddr} - ${fdt_addr}
+
+

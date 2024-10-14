@@ -1,0 +1,7 @@
+setenv bootargs console=ttymxc1,115200 root=/dev/sdb2 rw
+echo Devtree ${fdt_file} to Addr ${fdt_addr}
+fatload usb 0:1 ${fdt_addr} ${fdt_file}
+echo Load kernel ${image} to Addr ${loadaddr}
+fatload usb 0:1 ${loadaddr} ${image}
+echo "Booting Debian Kernelcommand:" ${bootargs}
+bootz ${loadaddr} - ${fdt_addr}

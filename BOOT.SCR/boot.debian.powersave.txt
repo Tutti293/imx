@@ -1,0 +1,8 @@
+powersave
+setenv bootargs console=ttymxc1,115200 root=/dev/mmcblk3p1 rw
+echo Devtree ${fdt_file} to Addr ${fdt_addr}
+ext4load mmc 0:1 ${fdt_addr} ${fdt_file}
+echo Load kernel ${image} to Addr ${loadaddr}
+ext4load mmc 0:1 ${loadaddr} ${image}
+echo "Booting Debian Kernelcommand:" ${bootargs}
+bootz ${loadaddr} - ${fdt_addr}

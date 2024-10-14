@@ -1,0 +1,10 @@
+setenv bootargs baseboard=iPAN7 console=tty1 console=ttymxc1,115200 video=mxcfb0:dev=lcd,IPAN7-EDT-WVGA,bpp=32,if=RGB565 root=/dev/nfs rw ip=dhcp nfsroot=${serverip}:${nfsroot},v3 init=/bin/systemd
+if dhcp ${loadaddr} ${image}; then 
+  if tftp ${fdt_addr} ${fdt_file}; then 
+     bootz ${loadaddr} ${initrd} ${fdt_addr}; 
+  else 
+     echo WARN: Cannot load the DT; 
+  fi 
+else 
+  echo WARN: Cannot load OS-Image; 
+fi

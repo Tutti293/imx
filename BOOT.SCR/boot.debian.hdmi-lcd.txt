@@ -1,0 +1,5 @@
+setenv bootargs console=ttymxc1,115200 consoleblank=0 mxcfb0:dev=hdmi,<detect> root=/dev/mmcblk3p1 rw
+ext4load mmc 0:1 ${fdt_addr} ${fdt_file}
+ext4load mmc 0:1 ${loadaddr} ${image}
+echo "Booting the Debian..." 
+bootz ${loadaddr} - ${fdt_addr}

@@ -1,0 +1,7 @@
+setenv bootargs baseboard=pConXS console=ttymxc1,115200 video=mxcfb0:dev=lcd root=/dev/mmcblk3p1 rw
+ext4load mmc 0:1 ${fdt_addr} ${fdt_file}
+ext4load mmc 0:1 ${loadaddr} ${image}
+echo "Booting the Debian..." 
+bootz ${loadaddr} - ${fdt_addr}
+
+

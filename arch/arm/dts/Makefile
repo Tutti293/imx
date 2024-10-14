@@ -692,6 +692,7 @@ dtb-y += \
 	imx6dl-sabreauto-gpmi-weim.dtb \
 	imx6dl-sabresd.dtb \
 	imx6dl-arm2.dtb \
+	imx6dl-trizeps7.dtb \
 	imx6dl-wandboard-revd1.dtb \
 
 endif
@@ -736,6 +737,7 @@ dtb-y += \
 	imx6qp-sabreauto-ecspi.dtb \
 	imx6qp-sabreauto-gpmi-weim.dtb \
 	imx6qp-sabresd.dtb \
+	imx6q-trizeps7.dtb \
 	imx6qp-wandboard-revd1.dtb \
 
 endif

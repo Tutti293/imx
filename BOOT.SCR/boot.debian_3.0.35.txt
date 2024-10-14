@@ -1,0 +1,5 @@
+setenv bootargs baseboard=iPAN5  console=tty1 console=ttymxc1,115200 loglevel=7 noinitrd root=/dev/mmcblk0p1 init=/sbin/init video=mxcfb0:dev=lcd,EDT-WVGA,bpp=32 video=mxcfb1:off video=mxcfb2:off fbmem=10M vmalloc=400M fb0base=0x27b00000 fbmem=28M ldo_active=on
+ext4load mmc 0:1 ${loadaddr} uImage
+bootm 
+
+

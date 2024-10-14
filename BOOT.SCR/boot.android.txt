@@ -1,0 +1,1 @@
+console=ttymxc1,115200 init=/init vmalloc=256M androidboot.console=ttymxc1 androidboot.hardware=freescale cma=384M androidboot.selinux=disable androidboot.dm_verity=disabled androidboot.selinux=permissive

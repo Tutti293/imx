@@ -158,6 +158,12 @@ choice
 	prompt "MX6 board select"
 	optional
 
+config TARGET_TRIZEPS7
+	bool "Trizeps VII"
+	select MX6QDL
+	select BOARD_LATE_INIT
+	select SUPPORT_SPL
+
 config TARGET_ADVANTECH_DMS_BA16
 	bool "Advantech dms-ba16"
 	depends on MX6Q
@@ -973,5 +979,6 @@ source "board/udoo/neo/Kconfig"
 source "board/wandboard/Kconfig"
 source "board/warp/Kconfig"
 source "board/BuR/brppt2/Kconfig"
+source "board/keithkoep/trizeps7/Kconfig"
 
 endif

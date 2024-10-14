@@ -1,0 +1,15 @@
+#trizeps7 Kconfig file
+
+if TARGET_TRIZEPS7
+
+config SYS_BOARD
+    default "trizeps7"
+
+config SYS_VENDOR
+    default "keithkoep"
+
+config SYS_CONFIG_NAME
+    default "trizeps7"
+
+endif
+

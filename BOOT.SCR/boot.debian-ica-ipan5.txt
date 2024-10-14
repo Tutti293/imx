@@ -1,0 +1,9 @@
+setenv bootargs console=ttymxc1,115200 consoleblank=0 no_console_suspend=1 video=mxcfb0:dev=hdmi,<detect>,rotate=3
+fatload mmc 0:1 ${fdt_addr} ${fdt_file}
+fatload mmc 0:1 ${loadaddr} ${image}
+fatload mmc 0:1 0x18080000 uInitrd
+echo "Booting Buildroot..."
+echo Devtree: ${fdt_addr}
+echo Kernel:  ${loadaddr}
+echo initrd:  0x18080000 
+bootz ${loadaddr} 0x18080000 ${fdt_addr}
