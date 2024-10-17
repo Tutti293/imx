@@ -305,9 +305,9 @@ void SetTrizepsEnvironment(void)
 	if (!(fdtfile =env_get("fdt_file")))
 	{ 
 	  if(is_mx6dq())
-	    env_set("fdt_file", "oftree-mx6q.dtb");
+	    env_set("fdt_file", "handtmann_quad.dtb");
 	  else
-	    env_set("fdt_file", "oftree.dtb");
+	    env_set("fdt_file", "handtmann_solo.dtb");
 	}
 
     env_set("board_name", "Trizeps7");

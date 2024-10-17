@@ -26,9 +26,9 @@
 #define MMC_BOOTLOADER_PARTITION  "0"
 #endif
 
-#define CONSOLE_DEV               "ttymxc0"
+#define CONSOLE_DEV               "ttymxc1"
 #define CONFIG_LOADADDR             0x12000000
-#define MMCROOT   	"219c000.usdhc!3"    /* Sigma init in intramfs parses this to mmcblk0p3 */
+#define MMCROOT   	"/dev/mmcblk3p2"    /* Sigma init in intramfs parses this to mmcblk0p3 */
 #define MMCROOT_2	"/dev/mmcblk0p3"
 #define SUB_LOADBOOTSCRIPT ""
 #define BOOTENV ""
@@ -44,7 +44,7 @@
 
 /* allow to overwrite serial and ethaddr */
 #define CONFIG_ENV_OVERWRITE
-#define CONFIG_CONS_INDEX       1
+#define CONFIG_CONS_INDEX       2
 #define CONFIG_BAUDRATE         115200
 
 #define CONFIG_FEC_MXC
@@ -181,7 +181,7 @@
         "usbdev=0\0"  \
         "usbpart=1\0" \
 	"mmcdev=" __stringify(CONFIG_SYS_MMC_ENV_DEV) "\0" \
-	"mmcpart=2\0" \
+	"mmcpart=1\0" \
 	"mmcpartext4=1\0" \
 	"partfdtandroid=8\0" \
 	"mmcroot="  MMCROOT   " ro\0" \

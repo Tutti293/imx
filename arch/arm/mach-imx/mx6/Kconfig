@@ -160,7 +160,7 @@ choice
 
 config TARGET_TRIZEPS7
 	bool "Trizeps VII"
-	select MX6QDL
+	depends on MX6QDL
 	select BOARD_LATE_INIT
 	select SUPPORT_SPL
 
